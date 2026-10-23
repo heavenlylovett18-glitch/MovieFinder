@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Search movies and sort results by title or release year." />
+  <title>MovieFinder | Discover Movies</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><nav class="nav container" aria-label="Main navigation"><a class="logo" href="#home">🎬 Movie<span>Finder</span></a><a class="nav-link" href="#results">Explore Movies</a></nav></header>
+  <main id="home">
+    <section class="hero container"><p class="eyebrow">YOUR NEXT MOVIE STARTS HERE</p><h1>Find your next <span>favorite movie.</span></h1><p class="intro">Search thousands of movies, discover new favorites, and sort results your way.</p>
+      <form id="search-form" class="search-form" role="search"><label class="sr-only" for="search-input">Movie title</label><input id="search-input" name="query" type="search" placeholder="Search for a movie (e.g. Batman)" required minlength="2" autocomplete="off"/><button type="submit">Search Movies <span aria-hidden="true">→</span></button></form>
+    </section>
+    <section id="results" class="results-section container" aria-labelledby="results-heading"><div class="results-toolbar"><div><p class="eyebrow">DISCOVER</p><h2 id="results-heading">Movie Results</h2><p id="result-count" class="muted">Search for a movie to get started.</p></div><div class="sort-wrapper"><label for="sort-select">Sort by</label><select id="sort-select"><option value="az">Title: A to Z</option><option value="za">Title: Z to A</option><option value="newest">Newest to Oldest</option><option value="oldest">Oldest to Newest</option></select></div></div>
+    <div id="status" class="status" role="status" aria-live="polite"><div class="empty-icon" aria-hidden="true">🍿</div><h3>Ready for movie night?</h3><p>Try searching for “Spider-Man”, “Batman”, or “Avengers”.</p></div><div id="movie-grid" class="movie-grid" aria-live="polite"></div><div class="pagination"><button id="load-more" class="load-more" type="button" hidden>Load more movies</button></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>🎬 MovieFinder</span><span>Movie data provided by <a href="https://www.omdbapi.com/" target="_blank" rel="noopener noreferrer">OMDb API</a></span><span>© <span id="year"></span> MovieFinder</span></div></footer>
+</body>
+</html>
